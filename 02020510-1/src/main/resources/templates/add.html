@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>demo</title>
+<link href="/index.css" rel="stylesheet"></link>
+</head>
+<body>
+
+	<form action="#" th:action="@{/confirm}" method="GET">
+		<p>
+			<label for="numb"> + 年 ：</label> <input id="numb" name="msg"
+				type="number" size="40" />
+		</p>
+		<p>
+			<input type="submit" value="送信" />
+		</p>
+	</form>
+	<p><label>現在＋年：</label> <label th:text="${year}">前回の数字plus</label></p>
+	<p><label>現在＋月：</label> <label th:text="${month}">前回の数字plus</label></p>
+	<p><label>現在＋日：</label> <label th:text="${day}">前回の数字plus</label></p>
+
+	<table>
+		<tr>
+			<th>年</th>
+			<th>月</th>
+			<th>日</th>
+			<th>曜日</th>
+		</tr>
+		<tr>
+			<th th:text="${modelYear}">年</th>
+			<th th:text="${modelMonth}">月</th>
+			<th th:text="${modelDay}">日</th>
+			<th th:text="${modelWeek}">曜日</th>
+		</tr>
+	</table>
+
+	<p>	<label>前回の数字：</label> <label th:text="${msg}">前回の数字</label>		</p>
+	<p>	<label>現在＋月末：</label> <label th:text="${last1}">前回の数字</label>	</p>
+	<p>	<label>現在＋月末：</label> <label th:text="${last2}">前回の数字</label>	</p>
+	<p>	<label>現在＋月末：</label> <label th:text="${last3}">前回の数字</label>	</p>
+	<p></p>
+
+</body>
+</html>
