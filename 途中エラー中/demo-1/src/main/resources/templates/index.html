@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<p><span th:text="${displayId}"></span></p>
+
+		<p><span th:text="${#dates.day(displayDataDB)}"></span></p>
+
+		<p>
+			<span th:text="${#dates.month(displayDataDB)}"></span>
+			<span th:text="${#dates.monthName(displayDataDB)}"></span>
+			<span th:text="${#dates.monthNameShort(displayDataDB)}"></span>
+		</p>
+
+		<p><span th:text="${#dates.year(displayDataDB)}"></span></p>
+
+		<p>
+			<span th:text="${#dates.dayOfWeek(displayDataDB)}"></span>
+			<span th:text="${#dates.dayOfWeekName(displayDataDB)}"></span>
+			<span th:text="${#dates.dayOfWeekNameShort(displayDataDB)}"></span>
+		</p>
+
+		<p>
+			<span th:text="${#dates.hour(displayDataDB)}"></span>
+			<span th:text="${#dates.minute(displayDataDB)}"></span>
+			<span th:text="${#dates.second(displayDataDB)}"></span>
+			<span th:text="${#dates.millisecond(displayDataDB)}"></span>
+		</p>
+	</div>
+
+	<div>
+		<h1>ユーザー新規登録</h1>
+		<form th:action="@{/add}" th:object="${requestData}" method="post">
+
+			<p>日付</p>
+			<span><input type="date" th:field="*{datadb}"></span>
+
+			<div>
+				<input type="submit" value="登録" class="btn">
+			</div>
+		</form>
+	</div>
+
+</body>
+</html>
